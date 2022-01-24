@@ -1,7 +1,3 @@
-def existInDictionary(word):
-    file = open("words.txt")
-    return word.lower() in file.read()
-
 def searchEngine(hintValue, hintHistory, result, validWords):
     x = 0
     invalidWords = []
@@ -47,13 +43,14 @@ def main():
         # Is this a 5 letter word ? 
         if type(hint) == str and len(hint)==5:
             # Does it exist in the word.txt file ? 
-            if(existInDictionary(hint)):
+            if(hint in validWords):
                 print("Your hint is :", hint)
                 print("What is the result (example : \"__X_O\" where \"_\" doesn't exist, \"X\" exist, \"O\" is correct) :")
                 result = input()
+                # Does the result patern (ig. X_OOX_) is valid ?
                 if type(result) == str and len(result)==5:
-                    newValidWords = searchEngine(hint, i, result, validWords)
-                    validWords = newValidWords
+                    validWords = searchEngine(hint, i, result, validWords)
+                    #validWords = newValidWords
                     print(len(validWords),"possible words.")
                     print(validWords)
                     i += 1
