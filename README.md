@@ -1,4 +1,4 @@
-# pyWordleCheat
+# pyWordleSolver
 A simple Wordle solver with no real intelligence nor complexity optimization
 
 # TODO : 
