@@ -8,10 +8,6 @@ A simple Wordle solver with no real intelligence nor complexity optimization
 
 # Usage :
 ```shell
-Launch ./python main.go
-```
-
-```shell
 ./python main.py
 --------------------------------------------------------------------------------------
 --                                  Wordle Solver                                   --
