@@ -4,14 +4,14 @@ def existInDictionary(word):
 
 def searchEngine(hintValue, hintHistory, result, validWords):
     x = 0
-    unvalidWords = []
+    invalidWords = []
     while x<=4 :
         # If doesn't exist
         if(result[x]=="_"):
             j = 0
             for word in validWords:
                 if hintValue[x] in word: 
-                    unvalidWords.append(word)
+                    invalidWords.append(word)
                 j += 1
 
         # If exist but in bad position
@@ -19,7 +19,7 @@ def searchEngine(hintValue, hintHistory, result, validWords):
             j = 0
             for word in validWords:
                 if hintValue[x] not in word: 
-                    unvalidWords.append(word)
+                    invalidWords.append(word)
                 j += 1
 
         # If good position
@@ -27,11 +27,11 @@ def searchEngine(hintValue, hintHistory, result, validWords):
             j = 0
             for word in validWords:
                 if hintValue[x]!=word[x]: 
-                    unvalidWords.append(word)
+                    invalidWords.append(word)
                 j += 1
         x += 1
 
-    return [words for words in validWords if words not in unvalidWords]
+    return [words for words in validWords if words not in invalidWords]
 
 def main():
     print("--------------------------------------------------------------------------------------")
