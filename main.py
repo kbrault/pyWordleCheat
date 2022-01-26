@@ -1,4 +1,4 @@
-def searchEngine(hintValue, hintHistory, result, validWords):
+def searchEngine(hintValue, result, validWords):
     x = 0
     invalidWords = []
     while x<=4 :
@@ -49,8 +49,7 @@ def main():
                 result = input()
                 # Does the result patern (ig. X_OOX_) is valid ?
                 if type(result) == str and len(result)==5:
-                    validWords = searchEngine(hint, i, result, validWords)
-                    #validWords = newValidWords
+                    validWords = searchEngine(hint, result, validWords)
                     print(len(validWords),"possible words.")
                     print(validWords)
                     i += 1
